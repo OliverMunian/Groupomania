@@ -1,19 +1,24 @@
-# groupomaniadeux
+# Groupomania - reséau social d'entreprise
+----------------------------------
+clonner le repository:
+https://github.com/OliverMunian/Groupomania.git
 
-## Project setup
+## Lancer le serveur front:
+
+Dans le terminal, rendez-vous dans le fichier Frontend:
 ```
+cd Frontend
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Cette application permet de:
+
+* S'inscrire et de rejoindre le réseau social de l'entreprise Groupomania
+* Se connecter
+* Ajouter un messages avec média
+* Modifier un message
+* Ajouter un commentaire
+* Accéder à son compte
+* Supprimer son compte

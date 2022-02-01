@@ -1,17 +1,16 @@
 READ ME
 
-# reséau social d'entreprise
-
-## groupomania - backend
+# Groupomania - reséau social d'entreprise
 ---------------------------------
 ## Comment utiliser cette API?
 
-clonner le repository:
-https://github.com/OliverMunian/Projet7_groupomania.git
+Clonner le repository:
+https://github.com/OliverMunian/Groupomania.git
 
-## Pour lancer le serveur NodeJS:
+## Lancer le serveur NodeJS:
 
-Rendez-vous dans le fichier backend avec la commande 'cd backend" en ligne de commande avec le terminal. 
+Rendez-vous dans le fichier Backend avec la commande 'cd Backend" en ligne de commande avec le terminal. 
+
 Puis effectuer les commandes suivantes dans l'ordre
 ```
 npm install
@@ -21,9 +20,11 @@ la commande nodemon permet de lancer le serveur coté "back"
 
 
 
+
+
 ## Base de donnée mysql
 ---------------------------------
-Ouvrez projet7_backend/Models/Index.js avec un éditeur de code puis a la ligne 5 choisir le mot passe voulu pour mysql:
+Ouvrez Groupomania/Backend/Models/Index.js avec un éditeur de code puis à la ligne 5 choisir le mot passe voulu pour mysql:
 
 Ouvrez une nouvelle fenêtre dans le terminal
 Assurez vous d'être dans le fichier backend
@@ -50,6 +51,7 @@ puis relancez mysql
 
 ```
 mysql u root -p
+Use groupomania
 ```
 
 Votre base donnée avec la data est enfin opérationnelle !
