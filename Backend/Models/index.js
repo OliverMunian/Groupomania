@@ -1,10 +1,11 @@
 const Sequelize = require("sequelize");
+const env = require('../env.json')
 const sequelize = new Sequelize(
-    'groupomania',
-    'root',
-    'Charbel20071993',
+    env.database,
+    env.user,
+    env.password,
     {
-        host: 'localhost',
+        host: env.host,
         dialect: 'mysql',
         allowPublicKeyRetrieval: true,
         dialectOptions: {

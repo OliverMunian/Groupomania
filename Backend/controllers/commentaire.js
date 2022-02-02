@@ -30,13 +30,6 @@ exports.findCommentaireByPost = (req, res, next) => {
     .catch(error => res.status(404).json({error}))
 };
 
-// //Modifier un commentaire
-// exports.modifyCommentaire = (req, res, next) => { 
-//     Commentaire.update({ ...req.body }, {...req.body, _id: req.params.id} )
-//     .then(() => res.status(200).json({ message: "Commentaire modifié !" }))
-//     .catch(error => res.status(400).json({ error }))
-// }
-
 //Supprimer un commentaire
 exports.deleteCommentaire = (req, res, next) => {
     Commentaire.findOne({where:{id: req.params.id}}).then(() =>

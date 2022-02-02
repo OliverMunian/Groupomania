@@ -1,5 +1,4 @@
 <template>
-
   <div class="posts" v-for="post in posts" :key="post.message">
     <div class="utilisateur-post">
       <div v-if="posts == true"> Rien à afficher pour le moment !</div>

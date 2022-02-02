@@ -11,7 +11,7 @@ exports.signup = (req, res, next) => {
   console.log('signup', req.body)
   bcrypt.hash(req.body.password, 10)
     // Création de l'user
-    .then(hash=>{
+    .then(hash =>{
       console.log(hash)
       const user = User.create({
         email: req.body.email,
@@ -19,7 +19,6 @@ exports.signup = (req, res, next) => {
         prenom: req.body.prenom,
         nom: req.body.nom
       })
-      user.save()
       .then(() => { 
         res.status(201).json({ message: 'Utilisateur créé !'})
       })
@@ -29,6 +28,7 @@ exports.signup = (req, res, next) => {
       })
     })
     .catch(error =>{
+      console.log(error)
       res.status(500).json({ error: 'ERROR BCRYPT' })
     })
 };
@@ -62,6 +62,44 @@ exports.login = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }));
 };
+
+exports.modify = (req, res, next) => {
+  User.findOne({ where:{id: req.user.userId}})
+    .then(user=>{
+      user.nom = req.body.nom
+      user.prenom = req.body.prenom
+      user.save()
+      .then(result =>{
+        res.status(200).json({message: 'utilisateur modifié'})
+      }).catch(error => {
+        console.log(error)
+        res.status(400).json({ error })
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({ error })
+    })
+}
+
+
+// exports.modifyUser = (req, res, next) => {
+//   console.log('ici')
+//   const id = req.params.id
+//   console.log(id)
+//   User.findOne({where:{id: id}})
+//   .then(user => {
+//       if (userId === !user.id){
+//       console.log(userId)
+//         res.status(400).json({ error: "Impossible de modifier l'utilisateur" })
+//       } else {
+//         user.update().then(user => res.status(200).json({ user }))
+//       }
+//     })
+//   .catch(error => {
+//       console.log(error)
+//       res.status(400).json({ error })})
+// };
 
 exports.remove = (req, res, next) => {
   Commentaire.destroy({where:{userId: req.user.userId }})

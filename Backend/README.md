@@ -31,10 +31,10 @@ Assurez vous d'être dans le fichier backend
 Puis lancez la commande suivante pour accéder a mysql
 
 ```
-mysql u root -p
+mysql -u {votre user} -p
 ```
 
-Creez une nouvelle base donnée que vous appellerez groupomania 
+Creez une nouvelle base donnée que vous appellerez groupomania (ce nom a été choisie arbitrairement vous pouvez le changer)
 
 ```
 CREATE DATABASE groupomania;
@@ -45,13 +45,13 @@ exit
 ```
 puis importer le fichier groupomania_with_data_dump.sql pour récuperer les données avec la commande :
 ```
-mysql -u root -p groupomania < groupomania_with_data_dump.sql
+mysql -u {votre user} -p groupomania < groupomania_with_data_dump.sql
 ```
 puis relancez mysql
 
 ```
-mysql u root -p
+mysql -u {votre user} -p
 Use groupomania
 ```
 
-Votre base donnée avec la data est enfin opérationnelle !
+Votre base donnée avec la data est enfin opérationnelle ! Vous pouvez désormais changer les données dans env.json pour faire coincider les données avec votre base donnée en local
